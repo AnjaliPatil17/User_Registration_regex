@@ -38,7 +38,7 @@ public class Main {
     }
 
     public static void phoneNo(String phoneno){
-        Pattern pattern=Pattern.compile("^[0-9]{2} [0-9]{10}$");
+        Pattern pattern=Pattern.compile("^[0-9]{2} [1-9][0-9]{9}$");
         Matcher match= pattern.matcher(phoneno);
         boolean ismatch= match.matches();
         if(ismatch){
@@ -48,16 +48,7 @@ public class Main {
         }
     }
 
-    public static void Password(String password){
-        Pattern pattern=Pattern.compile("^[a-z]{8}$");
-        Matcher match= pattern.matcher(password);
-        boolean ismatch= match.matches();
-        if(ismatch){
-            System.out.println("Valid input");
-        }else {
-            System.out.println("Invaid input");
-        }
-    }
+
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -73,8 +64,6 @@ public class Main {
         System.out.print("Enter the Phone no : ");
         String phoneno= sc.nextLine();
         phoneNo(phoneno);
-        System.out.print("Enter the Password : ");
-        String password= sc.nextLine();
-        phoneNo(password);
+
     }
 }
