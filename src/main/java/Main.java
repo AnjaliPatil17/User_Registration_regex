@@ -37,6 +37,17 @@ public class Main {
         }
     }
 
+    public static void phoneNo(String phoneno){
+        Pattern pattern=Pattern.compile("^[0-9]{2} [0-9]{10}$");
+        Matcher match= pattern.matcher(phoneno);
+        boolean ismatch= match.matches();
+        if(ismatch){
+            System.out.println("Valid input");
+        }else {
+            System.out.println("Invaid input");
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter the first name: ");
@@ -48,5 +59,8 @@ public class Main {
         System.out.print("Enter the Email ID : ");
         String emailid= sc.nextLine();
         emailId(emailid);
+        System.out.print("Enter the Phone no : ");
+        String phoneno= sc.nextLine();
+        phoneNo(phoneno);
     }
 }
