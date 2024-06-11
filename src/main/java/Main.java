@@ -48,6 +48,17 @@ public class Main {
         }
     }
 
+    public static void Password(String password){
+        Pattern pattern=Pattern.compile("^[a-z]{8}$");
+        Matcher match= pattern.matcher(password);
+        boolean ismatch= match.matches();
+        if(ismatch){
+            System.out.println("Valid input");
+        }else {
+            System.out.println("Invaid input");
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter the first name: ");
@@ -62,5 +73,8 @@ public class Main {
         System.out.print("Enter the Phone no : ");
         String phoneno= sc.nextLine();
         phoneNo(phoneno);
+        System.out.print("Enter the Password : ");
+        String password= sc.nextLine();
+        phoneNo(password);
     }
 }
