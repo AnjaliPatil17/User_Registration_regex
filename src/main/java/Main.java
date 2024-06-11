@@ -4,9 +4,9 @@ import java.util.regex.Pattern;
 
 
 public class Main {
-    public static void firstName(String name){
+    public static void firstName(String firstname){
         Pattern pattern=Pattern.compile("[A-Z][a-z]{3,}");
-        Matcher match= pattern.matcher(name);
+        Matcher match= pattern.matcher(firstname);
         boolean ismatch= match.matches();
         if(ismatch){
             System.out.println("Valid input");
@@ -14,10 +14,13 @@ public class Main {
             System.out.println("Inavaid input");
         }
     }
+
+
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter the first name: ");
-        String name= sc.nextLine();
-        firstName(name);
+        String firstname= sc.nextLine();
+        firstName(firstname);
+     
     }
 }
