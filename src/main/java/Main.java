@@ -27,7 +27,7 @@ public class Main {
     }
 
     public static void emailId(String emailid){
-        Pattern pattern=Pattern.compile("^[a-z0-9+._%\\-]+@[a-z0-9.-]+\\.[a-z]{2,6}$");
+        Pattern pattern=Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
         Matcher match= pattern.matcher(emailid);
         boolean ismatch= match.matches();
         if(ismatch){
@@ -49,7 +49,7 @@ public class Main {
     }
 
     public static void Password(String password){
-        Pattern pattern=Pattern.compile("^(?=.*[A-Z]{1,})(?=.*[0-9]{1,}).*[a-z](?=.*[!@#$%&]{1})(.{7,})$");
+        Pattern pattern=Pattern.compile("^[a-z]{8}$");
         Matcher match= pattern.matcher(password);
         boolean ismatch= match.matches();
         if(ismatch){
@@ -67,18 +67,16 @@ public class Main {
         System.out.print("Enter the Last name: ");
         String lastname=sc.nextLine();
         lastName(lastname);
-
-        for (int i = 0; i < 10; i++) {
-            System.out.print("Enter the Email ID: ");
-            String name = sc.nextLine();
-            emailId(name);
-        }
-
+        System.out.print("Enter the Email ID : ");
+        String emailid= sc.nextLine();
+        emailId(emailid);
         System.out.print("Enter the Phone no : ");
         String phoneno= sc.nextLine();
         phoneNo(phoneno);
         System.out.print("Enter the Password : ");
         String password= sc.nextLine();
-        phoneNo(password);
+        Password(password);
     }
 }
+
+
