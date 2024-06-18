@@ -49,7 +49,7 @@ public class Main {
     }
 
     public static void Password(String password){
-        Pattern pattern=Pattern.compile("^(?=.*[A-Z])(?=.*\\d).{8,}$");
+        Pattern pattern=Pattern.compile("^(?=.*[A-Z]{1,})(?=.*[0-9]{1,}).*[a-z](?=.*[!@#$%&]{1})(.{7,})$");
         Matcher match= pattern.matcher(password);
         boolean ismatch= match.matches();
         if(ismatch){
