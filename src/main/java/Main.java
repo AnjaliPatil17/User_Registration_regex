@@ -27,7 +27,7 @@ public class Main {
     }
 
     public static void emailId(String emailid){
-        Pattern pattern=Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+        Pattern pattern=Pattern.compile("^[a-z0-9+._%\\-]+@[a-z0-9.-]+\\.[a-z]{2,6}$");
         Matcher match= pattern.matcher(emailid);
         boolean ismatch= match.matches();
         if(ismatch){
@@ -67,9 +67,13 @@ public class Main {
         System.out.print("Enter the Last name: ");
         String lastname=sc.nextLine();
         lastName(lastname);
-        System.out.print("Enter the Email ID : ");
-        String emailid= sc.nextLine();
-        emailId(emailid);
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter the Email ID: ");
+            String name = sc.nextLine();
+            emailId(name);
+        }
+
         System.out.print("Enter the Phone no : ");
         String phoneno= sc.nextLine();
         phoneNo(phoneno);
