@@ -1,6 +1,3 @@
-UC9-Sample_Email_Validation file add
-        
-
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
