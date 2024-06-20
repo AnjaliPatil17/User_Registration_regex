@@ -83,9 +83,11 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Enter a Email : ");
-                    String email = sc.nextLine();
-                    System.out.println(emailId(email));
+                    for (int i = 0; i < 10; i++) {
+                        System.out.println("Enter a Email : ");
+                        String email = sc.nextLine();
+                        System.out.println(emailId(email));
+                    }
                     break;
 
                 case 4:

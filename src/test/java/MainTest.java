@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,6 +32,8 @@ class MainTest {
         assertEquals(Main.Password("Sanvi123#"),"Happy");
     }
 
+
+
     @Test
     void firstNameInvalid() {
         String validTest = Main.firstName("12ash");
@@ -56,4 +60,11 @@ class MainTest {
         assertEquals(Main.Password("snvi123#"),"Sad");
     }
 
+
+
+    @ParameterizedTest
+    @ValueSource(strings = {"abc@yahoo.com", "abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc100@gmail.com"})
+    void emailMultipleEntry(String emailId){
+        assertEquals(Main.emailId(emailId),"Happy");
+    }
 }
